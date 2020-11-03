@@ -9,6 +9,10 @@ const rateCache = {};
  * @returns {Promise}               Promise object represents the exchange rate, as floating-point number
  */
 const getRate = (baseCurrency, targetCurrency) => {
+  if (baseCurrency === targetCurrency) {
+    return Promise.resolve(1);
+  }
+
   if (rateCache[baseCurrency] && rateCache[baseCurrency][targetCurrency]) {
 
     const currentUnixTime = Math.round(Date.now() / 1000);
