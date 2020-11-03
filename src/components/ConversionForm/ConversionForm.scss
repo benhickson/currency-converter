@@ -1,0 +1,46 @@
+.ConversionForm {
+  width: 100%;
+  display: block;
+  left: auto;
+  right: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+
+  .materialCard {
+    display: inline-block;
+    width: 500px;
+    max-width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+
+    & > * {
+      margin: 30px;
+      display: block;
+
+      & > * {
+        display: inline-block;
+        margin: 5px;
+
+        &:first-child {
+          width: 150px;
+        }
+
+        &:last-child {
+          width: 120px;
+        }
+      }
+    }
+  }
+
+
+  // Hide up/down arrow on number input
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}
